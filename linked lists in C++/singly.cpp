@@ -20,9 +20,8 @@ class Node {
 };
 
 class LinkedList {
-    Node* head;
-
     public:
+        Node* head;
         LinkedList() {
             head = NULL;
         }
@@ -136,6 +135,13 @@ class LinkedList {
             }
             cout << endl;
         }
+
+        void displayRecursively(Node* curr) {
+            if(curr != nullptr) {
+                cout << curr->data << ((curr->next != nullptr) ? "-> ": "");
+                displayRecursively(curr->next);
+            }
+        }
 };
 
 int main() {
@@ -154,6 +160,8 @@ int main() {
     list.deleteAtEnd();
 
     list.printTheList();
+
+    list.displayRecursively(list.head);
 
     
 
