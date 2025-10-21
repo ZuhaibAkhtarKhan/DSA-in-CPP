@@ -1,8 +1,5 @@
-// Linked list is a linear data structure that allows the user to store data in non-contaguous memory locations
-
 #include <iostream>
 using namespace std;
-
 
 class Node {
     public:
@@ -138,27 +135,9 @@ class LinkedList {
 
         void displayRecursively(Node* curr) {
             if(curr != nullptr) {
-                cout << curr->data << ((curr->next != nullptr) ? "-> ": "\n");
+                cout << curr->data << ((curr->next != nullptr) ? "-> ": "");
                 displayRecursively(curr->next);
             }
-            
-        }
-
-        // Find Max in the list
-        float maxInTheList() {
-            if(head == nullptr) {
-                cout << "List is empty! " << endl;
-                return 0;
-            }
-            float max = head->data;
-            Node* curr = head;
-            while(curr->next != nullptr) {
-                curr = curr->next;
-                if(max < curr->data) {
-                    max = curr->data;
-                }
-            }
-            return max;
         }
 };
 
@@ -180,8 +159,6 @@ int main() {
     list.printTheList();
 
     list.displayRecursively(list.head);
-
-    cout << "Max in the list is: " << list.maxInTheList() << endl;
 
     
 
