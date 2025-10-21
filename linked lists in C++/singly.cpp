@@ -160,6 +160,28 @@ class LinkedList {
             }
             return max;
         }
+
+        // Binary search wouldn't work with LinkedLists.
+
+        // Move node to head
+        void moveToHead(int pos) {
+            Node* curr = head;
+            for(int i = 1; i < pos - 1 && curr->next != nullptr; i++) {
+                curr = curr->next;
+            }
+            if(curr->next == nullptr) {
+                return;
+            }
+            Node* node = curr->next;
+            curr->next = node->next;
+            node->next = head;
+            head = node;
+            
+        }
+
+        // Swap nodes
+        
+
 };
 
 int main() {
@@ -168,6 +190,8 @@ int main() {
     list.insertAtHead(30);
     list.insertAtHead(20);
     list.insertAtHead(10);
+    list.insertAtHead(-10);
+    list.insertAtHead(-20);
     
     list.printTheList();
 
@@ -178,6 +202,8 @@ int main() {
     list.deleteAtEnd();
 
     list.printTheList();
+
+
 
     list.displayRecursively(list.head);
 
