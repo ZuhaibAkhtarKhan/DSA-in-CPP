@@ -70,5 +70,18 @@ class Stack {
 int main() {
     Stack stack;
 
+    cout << stack.isEmpty() << endl;
+
+    stack.push(0);
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
+    stack.push(40);
+    stack.push(50);
+    stack.push(60);
+    stack.pop();
+
+    cout << "The last element is: " << stack.peek() << endl;
+
     stack.display();
 }
