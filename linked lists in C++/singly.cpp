@@ -145,71 +145,21 @@ class LinkedList {
         }
 
         // Find Max in the list
-        float maxInTheList() {
-            if(head == nullptr) {
-                cout << "List is empty! " << endl;
-                return 0;
-            }
-            float max = head->data;
-            Node* curr = head;
-            while(curr->next != nullptr) {
-                curr = curr->next;
-                if(max < curr->data) {
-                    max = curr->data;
-                }
-            }
-            return max;
-        }
+        float maxInTheList();
+
+        // Length of LL
+        int length();
+
+        // sum
+        float sum();
 
         // Binary search wouldn't work with LinkedLists.
 
         // Move node to head
-        void moveToHead(int pos) {
-            Node* curr = head;
-            for(int i = 1; i < pos - 1 && curr->next != nullptr; i++) {
-                curr = curr->next;
-            }
-            if(curr->next == nullptr) {
-                return;
-            }
-            Node* node = curr->next;
-            curr->next = node->next;
-            node->next = head;
-            head = node;
-            
-        }
+        void moveToHead(int pos);
 
-        // Swap nodes
-        
+        // Swap nodes 
+        void swapNodes(int pos1, int pos2);   // We can just swap the data which is easy but lets actually swap the nodes    
 
 };
 
-int main() {
-    LinkedList list;
-    list.insertAtHead(40);
-    list.insertAtHead(30);
-    list.insertAtHead(20);
-    list.insertAtHead(10);
-    list.insertAtHead(-10);
-    list.insertAtHead(-20);
-    
-    list.printTheList();
-
-    list.insertAtPosition(30.5, 4);
-    list.printTheList();
-
-    list.deleteAtHead();
-    list.deleteAtEnd();
-
-    list.printTheList();
-
-
-
-    list.displayRecursively(list.head);
-
-    cout << "Max in the list is: " << list.maxInTheList() << endl;
-
-    
-
-    return 0;
-}
