@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include "singly.cpp"
+#include "singly.hpp"
 
 #include "FromArray.hpp"
 

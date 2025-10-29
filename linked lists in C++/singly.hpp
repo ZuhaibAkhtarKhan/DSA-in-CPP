@@ -9,11 +9,11 @@ namespace singly {
 
         Node() {
             data = 0;
-            next = NULL;
+            next = nullptr;
         }
         Node(float data) {
             this->data = data;
-            this->next = NULL;
+            this->next = nullptr;
         }
     };
 
@@ -21,14 +21,14 @@ namespace singly {
         public:
             Node* head;
             LinkedList() {
-                head = NULL;
+                head = nullptr;
             }
 
             // Insertion
             void insertAtHead(float data) {
                 Node* newNode = new Node(data);
 
-                if(head == NULL) {
+                if(head == nullptr) {
                     head = newNode;
                     return;
                 }
@@ -47,10 +47,10 @@ namespace singly {
                 } 
 
                 Node* curr = head;
-                for(int i = 1; i < position-1 && curr != NULL; i++) {
+                for(int i = 1; i < position-1 && curr != nullptr; i++) {
                     curr = curr->next;
                 }
-                if(curr == NULL) {
+                if(curr == nullptr) {
                     return;
                 }
                 Node* newNode = new Node(data);
@@ -124,9 +124,9 @@ namespace singly {
             // Printing the list
             void printTheList() {
                 Node* curr = head;
-                while(curr != NULL) {
+                while(curr != nullptr) {
                     cout << curr->data;
-                    if(curr->next != NULL) {
+                    if(curr->next != nullptr) {
                         cout << "-> ";
                     }
                     curr = curr->next;
