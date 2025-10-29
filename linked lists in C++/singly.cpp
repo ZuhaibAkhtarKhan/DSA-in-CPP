@@ -143,18 +143,60 @@ namespace singly {
             }
 
             // Find Max in the list
-            float maxInTheList();
+            float maxInTheList() {
+                if(head == nullptr) {
+                    cout << "List is empty! " << endl;
+                    return 0;
+                }
+                float max = head->data;
+                Node* curr = head;
+                while(curr->next != nullptr) {
+                    curr = curr->next;
+                    if(max < curr->data) {
+                        max = curr->data;
+                    }
+                }
+                return max;
+            }
 
             // Length of LL
-            int length();
+            int length() {
+                Node* temp = head;
+                int i = 0;
+                while(temp!= nullptr) {
+                    i++;
+                    temp = temp->next;
+                }
+                return i;
+            }
 
             // sum
-            float sum();
+            float sum() {
+                float sum = 0;
+                Node* temp = head;
+                while(temp != nullptr) {
+                    sum += temp->data;
+                    temp = temp->next;
+                }
+                return sum;
+            }
 
             // Binary search wouldn't work with LinkedLists.
 
             // Move node to head
-            void moveToHead(int pos);
+            void moveToHead(int pos) {
+                Node* curr = head;
+                for(int i = 1; i < pos - 1 && curr->next != nullptr; i++) {
+                    curr = curr->next;
+                }
+                if(curr->next == nullptr) {
+                    return;
+                }
+                Node* node = curr->next;
+                curr->next = node->next;
+                node->next = head;
+                head = node;  
+            }
 
             // Swap nodes 
             void swapNodes(int pos1, int pos2);   // We can just swap the data which is easy but lets actually swap the nodes    

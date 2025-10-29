@@ -2,11 +2,9 @@
 using namespace std;
 
 #include "singly.cpp"
-#include "findMax.hpp"
-#include "MoveToHead.hpp"
+
 #include "FromArray.hpp"
-#include "lengthOfLL.hpp"
-#include "sum.hpp"
+
 
 #include "doubly.hpp"
 
