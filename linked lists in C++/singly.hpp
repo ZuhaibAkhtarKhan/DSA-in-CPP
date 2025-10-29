@@ -37,8 +37,8 @@ namespace singly {
             }
 
             void insertAtPosition(float data, int position) {
-                if(position < 1) {
-                    cout << "Insert a valid position!";
+                if(position < 0) {
+                    cout << "Enter a valid position!" << endl;
                     return;
                 }
                 if(position == 1) {
@@ -117,7 +117,12 @@ namespace singly {
                     curr = curr->next;
                 }
                 Node* temp = curr->next;
-                curr->next = curr->next->next;
+                if(curr->next) {
+                    
+                    curr->next = temp->next;
+                }
+                    
+                
                 delete temp;
             }
 
@@ -198,9 +203,69 @@ namespace singly {
                 head = node;  
             }
 
+            // is the list sorted
+            bool isSorted() {
+                Node* curr = head;
+                while(curr->next!= nullptr) {
+                    if(!(curr->data <= curr->next->data)) {
+                        return false;
+                    }
+                    curr = curr->next;
+                }
+                return true;
+            }
+
+            // insert in a sorted list
+            void insertSorted(int data) {
+                if(head == nullptr) {
+                    cout << "List is empty!" << endl;
+                    return;
+                }
+                if(!isSorted()) {
+                    cout << "List is not sorted!";
+                    return;
+                }
+                Node* curr = head;
+                int i = 1;
+                while(curr->next != nullptr) {
+                    if(data < curr->data) {
+                        insertAtPosition(data, i);
+                        return;
+                    }
+                    curr = curr->next;
+                    i++;
+                }
+                
+            }
+
+            // Delete duplicates
+            void deleteDuplicates() {
+                if(head == nullptr) {
+                    cout << "List is empty! " << endl;
+                    return;
+                }
+                Node* curr, *key = head;
+                while(key!= nullptr) {
+                    curr = key;
+                    while(curr->next != nullptr) {
+                        if(key->data == curr->next->data) {
+                            Node* temp = curr->next;
+                            curr->next = temp->next;
+                            delete temp;
+
+                        } else {
+                            curr = curr->next;
+                        }
+                        
+                    }
+                    key = key->next;
+                }
+            }
+
             // Swap nodes 
             void swapNodes(int pos1, int pos2);   // We can just swap the data which is easy but lets actually swap the nodes    
 
     };
 }
 
+ 

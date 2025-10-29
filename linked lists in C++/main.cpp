@@ -26,7 +26,7 @@ int main() {
     
     list.printTheList();
 
-    list.insertAtPosition(30.5, 4);
+    list.insertAtPosition(30.5, 7);
     list.printTheList();
 
     list.deleteAtHead();
@@ -41,6 +41,15 @@ int main() {
     
     cout << list.length() << endl;
     cout << list.sum() << endl;
+
+
+    list.insertAtEnd(40);
+    list.printTheList();
+    list.deleteDuplicates();
+    list.printTheList();
+    cout << list.isSorted() << endl;
+    list.insertSorted(0);
+    list.printTheList();
 
 
     cout << "\nDoubly: " << endl;
@@ -62,6 +71,8 @@ int main() {
     doublyList.deleteAtPosition(2);
     doublyList.forward();
     doublyList.reverse();
+
+
     
 
     return 0;
