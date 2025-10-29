@@ -1,9 +1,9 @@
-Node* create(int array[], int size) {
-    Node* head = new Node(array[0]);
-    Node* temp = head;
+singly::Node* create(int array[], int size) {
+    singly::Node *head = new singly::Node(array[0]);
+    singly::Node *temp = head;
 
     for(int i = 1; i < size; i++) {
-        Node* newNode = new Node(array[i]);
+        singly::Node* newNode = new singly::Node(array[i]);
         temp->next = newNode;
         temp = temp->next;
     }
@@ -11,8 +11,8 @@ Node* create(int array[], int size) {
     return head;
 }
 
-void display(Node* head) {
-    Node* temp = head;
+void display(singly::Node* head) {
+    singly::Node* temp = head;
     while(temp != nullptr) {
         cout << temp->data << ((temp->next != nullptr) ? " -> ": "\n");
         temp = temp->next;

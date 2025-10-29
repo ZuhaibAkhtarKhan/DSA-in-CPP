@@ -1,6 +1,6 @@
 // Find Max in the list
 
-float LinkedList::maxInTheList() {
+float singly::LinkedList::maxInTheList() {
     if(head == nullptr) {
         cout << "List is empty! " << endl;
         return 0;

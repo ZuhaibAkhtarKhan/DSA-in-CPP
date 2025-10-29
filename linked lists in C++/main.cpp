@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 #include "singly.cpp"
 #include "findMax.hpp"
 #include "MoveToHead.hpp"
@@ -5,13 +8,17 @@
 #include "lengthOfLL.hpp"
 #include "sum.hpp"
 
+#include "doubly.hpp"
+
 int main() {
+
+    cout << "Singly: " << endl;
     int array[5] {1, 2, 3, 4, 5};
     // Create a linkedList using an array
-    Node* listFromArray = create(array, 5);
+    singly::Node* listFromArray = create(array, 5);
     display(listFromArray);
 
-    LinkedList list;
+    singly::LinkedList list;
     list.insertAtHead(40);
     list.insertAtHead(30);
     list.insertAtHead(20);
@@ -37,8 +44,26 @@ int main() {
     cout << list.length() << endl;
     cout << list.sum() << endl;
 
-    
 
+    cout << "\nDoubly: " << endl;
+    
+    doubly::LinkedList doublyList;
+    doublyList.forward();
+    doublyList.reverse();
+    doublyList.insertionAtHead(10);
+    doublyList.insertionAtEnd(20);
+    // doublyList.insertionAtEnd(30);
+    doublyList.insertionAtEnd(40);
+    doublyList.insertionAtEnd(50);
+    doublyList.insertAtPosition(3, 30);
+    doublyList.forward();
+    doublyList.reverse();
+    
+    doublyList.deleteFromHead();
+    doublyList.deleteFromTail();
+    doublyList.deleteAtPosition(2);
+    doublyList.forward();
+    doublyList.reverse();
     
 
     return 0;

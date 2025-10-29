@@ -1,6 +1,6 @@
  // Move node to head
 
-void LinkedList::moveToHead(int pos) {
+void singly::LinkedList::moveToHead(int pos) {
     Node* curr = head;
     for(int i = 1; i < pos - 1 && curr->next != nullptr; i++) {
         curr = curr->next;

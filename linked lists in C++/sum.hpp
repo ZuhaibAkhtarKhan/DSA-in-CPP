@@ -1,4 +1,4 @@
-float LinkedList::sum() {
+float singly::LinkedList::sum() {
     float sum = 0;
     Node* temp = head;
     while(temp != nullptr) {
