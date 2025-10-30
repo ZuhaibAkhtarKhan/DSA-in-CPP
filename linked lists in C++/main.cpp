@@ -8,6 +8,8 @@ using namespace std;
 
 #include "doubly.hpp"
 
+#include "circular.hpp"
+
 int main() {
 
     cout << "Singly: " << endl;
@@ -52,6 +54,24 @@ int main() {
     list.printTheList();
 
 
+    cout << "Concatenating: " << endl;
+    singly::LinkedList list1;
+    singly::LinkedList list2;
+    list1.insertAtEnd(10);
+    list1.insertAtEnd(20);
+    list1.insertAtEnd(30);
+    list2.insertAtEnd(40);
+    list2.insertAtEnd(50);
+    list2.insertAtEnd(60);
+
+    singly::Node* newList = concatenate(list1.head, list2.head);
+    singly::Node* temp = newList;
+    while(temp != nullptr) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+
+
     cout << "\nDoubly: " << endl;
     
     doubly::LinkedList doublyList;
@@ -73,7 +93,22 @@ int main() {
     doublyList.reverse();
 
 
-    
+    cout << "Doubly Circular: " << endl;
+    circular::LinkedList circularList;
+    circularList.insertionAtHead(10);
+    circularList.insertionAtTail(20);
+    circularList.insertionAtPosition(3, 30);
+    circularList.insertionAtTail(40);
+    circularList.insertionAtTail(50);
+    circularList.insertionAtTail(50);
+
+    circularList.display();
+
+    circularList.deleteFromEnd();
+    circularList.deleteFromHead();
+    circularList.deleteAtPosition(3);
+
+    circularList.display();
 
     return 0;
 }

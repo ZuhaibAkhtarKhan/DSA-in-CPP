@@ -268,4 +268,12 @@ namespace singly {
     };
 }
 
- 
+singly::Node* concatenate(singly::Node* list1, singly::Node* list2) {
+    singly::Node* temp = list1;
+    while(temp->next != nullptr) {
+        temp = temp->next;
+    }
+    temp->next = list2;
+
+    return list1;
+}
