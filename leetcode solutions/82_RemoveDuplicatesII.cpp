@@ -1,6 +1,5 @@
-
+// Incomplete yet
 // Definition for singly-linked list.
-
 struct ListNode {
     int val;
     ListNode *next;
@@ -19,11 +18,9 @@ public:
                     ListNode* node = temp->next;
                     temp->next = node->next;
                     delete node;
-                } else {
-                    temp = temp->next;
-                }
+                }    
             }
         }
         return head;
-    }
+    }    
 };
