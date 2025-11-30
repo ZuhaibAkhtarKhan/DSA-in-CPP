@@ -1,16 +1,8 @@
 #include <iostream>
 using namespace std;
 
-void selectionSort(int array[], int size) {
-    for(int i = 0; i< size-1; i++) {
-        int minInd = i;
-        for(int j = i+1; j < size; j++) {
-            if(array[minInd] > array[j]) {
-                minInd = j;
-            }
-        }
-        swap(array[i], array[minInd]);
-    }
+void mergeSort(int arr[], int size) {
+    
 }
 
 int main() {
@@ -27,8 +19,8 @@ int main() {
         cout << array[i] << " ";
     }
     
-    cout << "\nSorted by Selection sort: ";
-    selectionSort(array, size);
+    cout << "\nSorted by Merge sort: ";
+    mergeSort(array, size);
     for(int i = 0; i < size; i++) {
         cout << array[i] << " ";
     }

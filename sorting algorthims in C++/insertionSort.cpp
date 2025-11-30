@@ -2,15 +2,14 @@
 using namespace std;
 
 void insertionSort(int array[], int size) {
-    int key, j;
-    for(int i = 1; i < size; i++) {
-        key = array[i];
-        j = i - 1;
-        while(j >= 0 && array[j] > key) {
+    for(int i = 0; i< size-1; i++) {
+        int key = array[i+1];
+        int j = i;
+        while(j>=0 && key < array[j]) {
             array[j+1] = array[j];
-            j= j -1;
+            j--;
         }
-        array[j+1] = key;
+        array[j + 1] = key;
     }
 }
 

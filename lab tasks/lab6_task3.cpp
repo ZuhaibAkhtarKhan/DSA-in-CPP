@@ -2,6 +2,7 @@
 using namespace std;
 
 void selectionSort(int array[], int size) {
+    int count = 0;
     for(int i = 0; i< size-1; i++) {
         int minInd = i;
         for(int j = i+1; j < size; j++) {
@@ -10,7 +11,12 @@ void selectionSort(int array[], int size) {
             }
         }
         swap(array[i], array[minInd]);
+        count++;
+        cout << "After pass " << i+1 << ": ";
+        for(int k = 0; k < size; k++) cout << array[k] << " ";
+        cout << "\n";
     }
+    cout << "Swaps performed: " << count << "\n";
 }
 
 int main() {
@@ -27,8 +33,9 @@ int main() {
         cout << array[i] << " ";
     }
     
-    cout << "\nSorted by Selection sort: ";
+    cout << "\nSorted by Selection sort: \n";
     selectionSort(array, size);
+    cout << "Sorted Array: ";
     for(int i = 0; i < size; i++) {
         cout << array[i] << " ";
     }

@@ -3,9 +3,9 @@ using namespace std;
 
 void bubbleSort(int array[], int size) {    
     int temp;
-    for(int i = 0; i < size; i++) {
+    for(int i = 0; i < size - 1; i++) {
         bool swapped = false;
-        for(int j = 0; j < size-1; j++) {
+        for(int j = 0; j < size-1-i; j++) {
             if (array[j] > array[j+1]) {
                 temp = array[j];
                 array[j] = array[j+1];
@@ -15,14 +15,10 @@ void bubbleSort(int array[], int size) {
             
         }
         if(!swapped) {
-            break;
+            return;
         }
     }
 
-    return;
-}
-
-void insertionSort(int array[], int size) {
     
 }
 
@@ -41,11 +37,6 @@ int main() {
     }
     cout << "\nSorted by Bubble sort: ";
     bubbleSort(array, size);
-    for(int i = 0; i < size; i++) {
-        cout << array[i] << " ";
-    }
-    cout << "\nSorted by Insertion sort: ";
-    insertionSort(array, size);
     for(int i = 0; i < size; i++) {
         cout << array[i] << " ";
     }
