@@ -3,12 +3,13 @@ using namespace std;
 
 class Queue {
     public: 
-    int arr[100];
+    int* arr;
     int front, rear;
 
-    Queue() {
+    Queue(int size) {
         front = -1;
         rear = -1;
+        arr = new int[size];
     }
 
     bool isEmpty() {
@@ -73,10 +74,13 @@ class Queue {
         }
         cout << endl;
     }
+    ~Queue() {
+        delete arr;
+    }
 };
 
 int main() {
-    Queue queue;
+    Queue queue(100);
 
     cout << queue.isEmpty() << endl;
     cout << queue.isFull() << endl;

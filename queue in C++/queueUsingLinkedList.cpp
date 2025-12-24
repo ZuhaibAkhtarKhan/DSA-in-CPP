@@ -39,17 +39,8 @@ class Queue {
             rear = newNode;
             return;
         }
-        if(front == rear) {
-            front = newNode;
-            front->next = rear;
-            return;
-        }
-        Node* temp = front;
-        while(temp->next != nullptr) {
-            temp = temp->next;
-        }
-        rear = temp;
         rear->next = newNode;
+        rear = rear->next;
     }
 
     int dequeue() {

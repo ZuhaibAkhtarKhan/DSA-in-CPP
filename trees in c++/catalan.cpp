@@ -14,7 +14,7 @@ int main() {
     cout << "Enter the number of nodes: " ;
     cin >> n;
 
-    cout << "Number of different trees formed are(unlabeled): ";
+    cout << "Number of different trees (shapes) formed are(unlabeled): ";
     cout << (factorial(2*n)/(factorial(n)*factorial(n))) / (n+1);
 
     cout << "\nNumber of different trees formed are(labeled): ";
