@@ -5,11 +5,11 @@ void insertionSort(int array[], int size) {
     for(int i = 0; i< size-1; i++) {
         int key = array[i+1];
         int j = i;
-        while(j>=0 && key < array[j]) {
+        while(j >= 0 && key < array[j]) {
             array[j+1] = array[j];
             j--;
         }
-        array[j + 1] = key;
+        array[j+1] = key;
     }
 }
 
@@ -33,3 +33,14 @@ int main() {
         cout << array[i] << " ";
     }
 }
+
+
+// for(int i = 0; i< size-1; i++) {
+//         int key = array[i+1];
+//         int j = i;
+//         while(j>=0 && key < array[j]) {
+//             array[j+1] = array[j];
+//             j--;
+//         }
+//         array[j + 1] = key;
+//     }
